@@ -11,6 +11,8 @@
 
     <!-- Page specific data -->
     <script src="data/data.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/shops.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/customers.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/specialoffers.js" type="text/javascript" charset="utf-8"></script>
     <script src="data/menu.js" type="text/javascript" charset="utf-8"></script>
 
@@ -40,17 +42,18 @@
                             id: "sidebar",
                             css: "main_sidebar",
                             width: 200,
+                            collapsed: true,
                             collapsedWidth: 60,
                             data: menu_data,
                             on: {
                                 onAfterSelect: function(id){
                                     $$("multiview").setValue(id);
-                                },
-                                ready: function(){
-                                    var firstItem = this.getFirstID();
-                                    this.select(firstItem);
                                 }
-                            }
+                            },
+                            ready: function(){
+                                var firstItem = "shops"; //this.getFirstID();
+                                this.select(firstItem);
+                            },
                         },
                         {
                             id: "multiview",

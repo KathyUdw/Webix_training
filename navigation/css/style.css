@@ -87,3 +87,53 @@
 .accordionitem_animation .webix_accordionitem {
     transition: height 0.5s;
 }
+
+/* CUSTOMERS */
+.all_pagers, .pager .webix_pager_item, .pager .webix_pager_item_selected {
+    border-color: #fff;
+    border-radius: 4px;
+}
+.all_pagers:hover, .pager .webix_pager_item:hover, .pager .webix_pager_item_selected:hover {
+    background-color: #fff;
+    border-color: #536478;
+}
+.all_pagers:active, .pager .webix_pager_item:active, .pager .webix_pager_item_selected:active, .all_pagers:focus, .pager .webix_pager_item:focus, .pager .webix_pager_item_selected:focus {
+    background-color: #fff;
+}
+
+.pager .webix_pager_item {
+    color: #536478;
+    background-color: #fff;
+}
+.pager .webix_pager_item:active, .pager .webix_pager_item:focus {
+    background-color: #fff;
+}
+
+.pager .webix_pager_item_selected {
+    background-color: #536478;
+}
+.pager .webix_pager_item_selected:hover {
+    background-color: #536478;
+    border-color: #536478;
+}
+
+.webix_column > div, .webix_table_cell {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.btn .webix_el_box button.webix_img_btn_abs.webixtype_base {
+    background: #f9948b;
+    border: 1px solid #f9948b;
+}
+
+.btn .webix_el_box.webix_disabled_box button.webix_img_btn_abs.webixtype_base {
+    background: #eee;
+    border: 1px solid #eee;
+}
+
+.btn .webix_icon {
+    font-size: 18px;
+    width: 24px;
+}
