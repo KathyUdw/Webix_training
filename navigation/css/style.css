@@ -1,0 +1,89 @@
+.webix_layout_toolbar.webix_toolbar {
+    background: #587089;
+    height: 60px !important;
+}
+
+.webix_icon_btn, .webix_icon {
+    font-size: 24px;
+    width: 46px;
+}
+
+.webix_sidebar {
+    background: #fff;
+}
+
+.webix_sidebar .webix_tree_item.webix_selected,
+.webix_sidebar .webix_tree_item.webix_selected span {
+    background-color: #fff;
+    color: #f9948b;
+}
+
+.main_sidebar span {
+    margin-left: 9px !important;
+}
+
+.main_sidebar.webix_sidebar .webix_tree_branch_1 {
+    border: none;
+}
+
+.main_sidebar .webix_tree_item {
+    height: 55px !important;
+    line-height: 57px !important;
+    margin-top: 13px;
+}
+
+.main_sidebar .webix_selected {
+    background-color: #f9948b !important;
+    width: 5px;
+}
+
+.main_sidebar .webix_selected .webix_icon:before {
+    color: #f9948b;
+}
+
+.webix_sidebar_popup_title .webix_template,
+.webix_sidebar_popup_title.webix_selected,
+.main_sidebar.webix_sidebar .webix_tree_branch_1>.webix_tree_item {
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.main_sidebar.webix_sidebar .webix_tree_item {
+    font-size: 50px;
+}
+
+/* SPECIAL COFFEE OFFERS */
+.coffee_box .webix_dataview_item, .coffee_box .webix_dataview_item:focus {
+    border-width: 0px;
+    outline: none;
+}
+.coffee_box .webix_dataview_item > div {
+    box-shadow: 5px 5px 5px #eee;
+    margin: 10px;
+    padding: 10px;
+}
+.coffee_box .block {
+    clear: both;
+    text-align: center;
+}
+.button {
+    border-radius: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #536478;
+    padding: 5px 0px;
+}
+.accordion .webix_accordionitem_header {
+    background-color: #f9948e;
+    font-size: 18px;
+    line-height: 60px;
+}
+.accordion .webix_accordionitem.collapsed .webix_accordionitem_header {
+    background-color: #969faa;
+    color: #fff;
+}
+.accordionitem_animation .webix_accordionitem {
+    transition: height 0.5s;
+}

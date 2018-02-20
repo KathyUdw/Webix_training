@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Webix files -->
+    <link rel="stylesheet" href="../../../libs_and_frameworks/webix5/codebase/webix.css" type="text/css" charset="utf-8">
+    <script src="../../../libs_and_frameworks/webix5/codebase/webix.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Free Webix extensions -->
+    <link type="text/css" rel="stylesheet" href="http://cdn.webix.com/components/sidebar/sidebar.css" charset="utf-8">
+    <script type="text/javascript" src="http://cdn.webix.com/components/sidebar/sidebar.js" charset="utf-8"></script>
+
+    <!-- Page specific data -->
+    <script src="data/data.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/specialoffers.js" type="text/javascript" charset="utf-8"></script>
+    <script src="data/menu.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/style.css" charset="utf-8">
+</head>
+<body>
+    <script type="text/javascript" charset="utf-8">
+        webix.ui({
+            rows: [
+                {view: "toolbar", css: "main_toolbar", elements: [
+                    {view: "button", type: "icon", icon: "bars", width: 50, height: 60,
+                        align: "left", css: "main_toolbar_icon bars_icon", click: function(){
+                            $$("sidebar").toggle();
+                        }},
+                    {view: "label", label: "Webix Coffee", css: "toolbar_label"},
+                    {view: "button", type: "icon", icon: "envelope-o", width: 50,
+                        align: "left", css: "main_toolbar_icon envelope_icon", badge: 4},
+                    {view: "button", type: "icon", icon: "bell-o", width: 50,
+                        align: "left", css: "main_toolbar_icon bell_icon", badge: 10}
+                ]},
+                {
+                    cols: [
+                        {
+                            view: "sidebar",
+                            id: "sidebar",
+                            css: "main_sidebar",
+                            width: 200,
+                            collapsedWidth: 60,
+                            data: menu_data,
+                            on: {
+                                onAfterSelect: function(id){
+                                    $$("multiview").setValue(id);
+                                },
+                                ready: function(){
+                                    var firstItem = this.getFirstID();
+                                    this.select(firstItem);
+                                }
+                            }
+                        },
+                        {
+                            id: "multiview",
+                            cells: multiview_cells,
+                            animate: false
+                        }
+                    ]
+                }
+            ]
+        })
+    </script>
+</body>
+</html>
