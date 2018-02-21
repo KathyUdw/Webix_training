@@ -1,18 +1,29 @@
 var map_icon = "../images/map_marker.svg";
-var person_image = "../images/coffee_monkey.jpg";
+var person_image = "../images/happy-coffee.jpg";
+
 var shops = {
     cols: [
         {
             view: "google-map",
             id: "map",
-            key: "",
+            // key: "",
             css: "map",
             zoom: 4,
             center: [ 33.348885, -60.820313 ],
             data: [
                 { id: 1, lat: 40.730610, lng: -73.935242, title: "Webix Coffee New York City Office", icon: map_icon },
                 { id: 2, lat: 25.761681, lng: -80.191788, title: "Webix Coffee Miami Office", icon: map_icon }
-            ]
+            ],
+            on: {
+                onItemClick:function(id, marker){
+                    marker.setAnimation(google.maps.Animation.BOUNCE);
+                    $$("staffOrganogram").clearAll();
+                    $$("staffOrganogram").load("https://api.myjson.com/bins/"+(id == 1 ? "cga85" : "8f6gl"));
+                    setTimeout(function(){
+                        marker.setAnimation(null);
+                    }, 1450)
+                }
+            }
         },
         {
             view: "organogram",

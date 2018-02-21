@@ -137,3 +137,47 @@
     font-size: 18px;
     width: 24px;
 }
+
+/* ORGANOGRAM */
+.organogram {
+    background: url("../../images/bg_coffee.png");
+}
+
+.organogram img.avatar {
+    width: 100%;
+    max-width: 80px;
+    position: absolute;
+    left: 150px;
+    top: 0px;
+    border-radius: 50%;
+}
+
+.organogram .wrapper {
+    position: absolute;
+    top: 8px;
+    left: 15px;
+    max-width: 130px;
+}
+
+.organogram .wrapper p {
+    margin: 6px 0;
+}
+
+.organogram .wrapper p:nth-of-type(1) {
+    font-weight: bold;
+}
+
+.organogram .wrapper p:nth-of-type(2) {
+    font-size: 14px;
+}
+
+.organogram .webix_organogram_item {
+    background: #fff;
+    border: 1px solid #eee;
+    height: 82px !important;
+    margin-bottom: 0 !important;
+}
+
+.organogram .webix_organogram_item.webix_selected {
+    background: #536478;
+}
