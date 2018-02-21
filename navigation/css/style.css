@@ -181,3 +181,8 @@
 .organogram .webix_organogram_item.webix_selected {
     background: #536478;
 }
+
+/* PDF VIEWER */
+.webix_toolbar.pdf_bar .webix_template, .pdf_toolbar.webix_layout_toolbar.webix_toolbar {
+    background: #9CAAB5;
+}

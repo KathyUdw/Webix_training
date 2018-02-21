@@ -26,3 +26,14 @@ var client_data = [
     {"id":5, "fullname":"Michael Taylor", "gender": 0, "birthday":"08/12/2017", "branch":"Miami", "carddate":"01/01/2017", "level":"Silver", "notes":"", "phone":"", "email":"", "notifications":1},
     {"id":6, "fullname":"Emma Brown", "gender": 1, "birthday":"08/12/2017", "branch":"Miami", "carddate":"01/01/2017", "level":"Gold", "notes":"", "phone":"", "email":"", "notifications":1}
 ];
+
+var pdf_data = [
+    {id: "br1", value: "New York City Branch", open: true, data:[
+        {id: "doc1", value: "Rental Agreement", docurl: "data.pdf"},
+        {id: "doc2", value: "Qualification Certificates", docurl: "data.pdf"}
+    ]},
+    {id: "br2", value: "Miami Branch", open: true, data:[
+        {id: "doc3", value: "Rental Agreement", docurl: "data.pdf"},
+        {id: "doc4", value: "Customer Questionnaire", docurl: "data.pdf"}
+    ]}
+];
