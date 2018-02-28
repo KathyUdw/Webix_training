@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../libs_and_frameworks/webix5/codebase/webix.css" type="text/css" charset="utf-8">
+        <script src="../../libs_and_frameworks/webix5/codebase/webix.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>
+        <script type="text/javascript" charset="utf-8">
+            webix.ui({
+                view: "form",
+                width: 600,
+                elements: [
+                    {view: "label", label: "Gebruikersprofiel"},
+                    {view: "text", name: "userFirstName", label: "Voornaam", readonly: true},
+                    {view: "text", name: "userLastName", label: "Achternaam", disabled: true},
+                    {
+                        view: "select",
+                        name: "userCity",
+                        label: "Stad",
+                        options: ["Amsterdam", "Almere", "Enschede"]
+                    },
+                    {
+                        view: "combo",
+                        name: "userCityCombo",
+                        label: "Stad",
+                        value: "Stad",
+                        options: [
+                            {id: 1, value: "Amsterdam"},
+                            {id: 2, value: "Almere"},
+                            {id: 3, value: "Den Helder"}
+                        ]
+                    },
+                    {
+                        view: "richselect",
+                        label: "Je stad",
+                        options: ["Amsterdam", "Almere", "Enschede"],
+                        value: "Almere"
+                    }
+                ]
+            });
+        </script>
+    </body>
+</html>
