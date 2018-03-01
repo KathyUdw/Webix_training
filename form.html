@@ -7,35 +7,105 @@
     <body>
         <script type="text/javascript" charset="utf-8">
             webix.ui({
-                view: "form",
-                width: 600,
-                elements: [
-                    {view: "label", label: "Gebruikersprofiel"},
-                    {view: "text", name: "userFirstName", label: "Voornaam", readonly: true},
-                    {view: "text", name: "userLastName", label: "Achternaam", disabled: true},
+                type: "clean",
+                cols: [
+                    {},
                     {
-                        view: "select",
-                        name: "userCity",
-                        label: "Stad",
-                        options: ["Amsterdam", "Almere", "Enschede"]
-                    },
-                    {
-                        view: "combo",
-                        name: "userCityCombo",
-                        label: "Stad",
-                        value: "Stad",
-                        options: [
-                            {id: 1, value: "Amsterdam"},
-                            {id: 2, value: "Almere"},
-                            {id: 3, value: "Den Helder"}
+                        view: "form",
+                        width: 600,
+                        elementsConfig: {
+                            labelWidth: 150
+                        },
+                        scroll: "y",
+                        elements: [
+                            {view: "label", label: "Gebruikersprofiel"},
+                            {view: "search", placeholder: "Zoeken"},
+                            {view: "tabbar", options: ["Algemeen", "Geavanceerd"]},
+                            {view: "text", name: "userFirstName", label: "Voornaam", readonly: true},
+                            {view: "text", name: "userLastName", label: "Achternaam", disabled: true},
+                            /*{
+                                view: "select",
+                                name: "userCity",
+                                label: "Stad",
+                                options: ["Amsterdam", "Almere", "Enschede"]
+                            },
+                            {
+                                view: "combo",
+                                name: "userCityCombo",
+                                label: "Stad",
+                                value: "Stad",
+                                options: [
+                                    {id: 1, value: "Amsterdam"},
+                                    {id: 2, value: "Almere"},
+                                    {id: 3, value: "Den Helder"}
+                                ]
+                            },*/
+                            {
+                                view: "richselect",
+                                label: "Stad",
+                                options: ["Amsterdam", "Almere", "Enschede"],
+                                value: "Almere"
+                            },
+                            {
+                                view: "radio",
+                                label: "Geslacht",
+                                options: ["Man", "Vrouw", "Geen keuze"],
+                                value: "Geen keuze"
+                            },
+                            /*{
+                                view: "segmented",
+                                label: "Geslacht",
+                                options: ["Man", "Vrouw", "Geen keuze"],
+                                value: "Geen keuze"
+                            },*/
+                            {
+                                view: "datepicker",
+                                label: "Geboortedatum",
+                                value: new Date(1992, 10, 28),
+                                format: "%d/%m/%Y"
+                            },
+                            {view: "counter", label: "Kinderen", value: 0},
+                            {
+                                view: "fieldset",
+                                label: "Gebruikersicon instellingen",
+                                body: {
+                                    rows: [
+                                        {
+                                            view: "colorpicker",
+                                            label: "Icon kleur",
+                                            value: "lightblue"
+                                        },
+                                        {
+                                            view: "slider",
+                                            label: "Icon grootte",
+                                            value: "48",
+                                            min: 20,
+                                            max: 80,
+                                            title:webix.template("#value# px")
+                                        }
+                                    ]
+                                }
+                            },
+                            // {type: "section", template: "Notities & Notificaties"},
+                            {view: "textarea", label: "Notities", height: 200},
+                            // {view: "checkbox", label: "Stuur notificaties", value: false},
+                            {
+                                view: "toggle",
+                                type: "iconButton",
+                                onIcon: "check",
+                                offIcon: "bell",
+                                onLabel: "Notificaties zijn ingeschakeld",
+                                offLabel: "Notificaties inschakelen"
+                            },
+                            {
+                                cols: [
+                                    {view: "button", type: "iconButton", icon: "floppy-o", label: "Opslaan"},
+                                    {view: "button", type: "iconButton", icon: "trash", label: "Annuleren"}
+                                ]
+                            }
                         ]
                     },
-                    {
-                        view: "richselect",
-                        label: "Je stad",
-                        options: ["Amsterdam", "Almere", "Enschede"],
-                        value: "Almere"
-                    }
+                    {}
                 ]
             });
         </script>
