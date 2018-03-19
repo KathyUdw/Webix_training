@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Webix formulier</title>
+
+    <link rel="stylesheet" href="../../../libs_and_frameworks/webix5/codebase/webix.css" type="text/css">
+    <script src="../../../libs_and_frameworks/webix5/codebase/webix.js" type="text/javascript"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        webix.ui({
+            view: "form",
+            id: "gebruikersformulier",
+            width: 460,
+            elementsConfig: {
+                labelWidth: 110
+            },
+            elements: [
+                { view: "text", label: "Groep", name: "groep", required: true },
+                { view: "text", label: "Loginnaam", name: "loginnaam", required: true },
+                { view: "checkbox", label: "Nieuw wachtwoord", name: "nieuwwachtwoord", labelWidth: 150 },
+                { view: "text", label: "Wachtwoord", name: "wachtwoord", required: true, type: "password" },
+                { view: "combo", label: "Vestigingen", name: "vestigingen", required: true, 
+                    options: [
+                        { id: "v1", value: "Vestiging 1" },
+                        { id: "v2", value: "Vestiging 2" },
+                        { id: "v3", value: "Vestiging 3" },
+                        { id: "v4", value: "Vestiging 4" }
+                ] },
+                { view: "combo", label: "Klant", name: "klant", 
+                    options: [
+                        { id: "k1", value: "Klant 1" },
+                        { id: "k2", value: "Klant 2" },
+                        { id: "k3", value: "Klant 3" }
+                ] },
+                { view: "combo", label: "Type", name: "type", 
+                    options: [
+                        { id: "super", value: "super" },
+                        { id: "admin", value: "admin" },
+                        { id: "editor", value: "editor" },
+                        { id: "gast", value: "gast" }
+                ] },
+                { view: "combo", label: "Status", name: "status", 
+                    options: [
+                        { id: "act", value: "act" },
+                        { id: "non", value: "non" }
+                ] }
+            ]
+        });
+    </script>
+</body>
+</html>
