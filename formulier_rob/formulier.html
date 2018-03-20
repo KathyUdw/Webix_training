@@ -6,49 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Webix formulier</title>
 
+    <!-- Webix bestanden -->
     <link rel="stylesheet" href="../../../libs_and_frameworks/webix5/codebase/webix.css" type="text/css">
     <script src="../../../libs_and_frameworks/webix5/codebase/webix.js" type="text/javascript"></script>
+
+    <!-- Mijn bestanden -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="data/data.js" type=text/javascript></script>
+    <script src="js/functions.js" type=text/javascript></script>
 </head>
 <body>
     <script type="text/javascript">
         webix.ui({
-            view: "form",
-            id: "gebruikersformulier",
-            width: 460,
-            elementsConfig: {
-                labelWidth: 110
-            },
+            view:"form",
+            id:"gebruikersformulier",
+            width:460,
             elements: [
-                { view: "text", label: "Groep", name: "groep", required: true },
-                { view: "text", label: "Loginnaam", name: "loginnaam", required: true },
-                { view: "checkbox", label: "Nieuw wachtwoord", name: "nieuwwachtwoord", labelWidth: 150 },
-                { view: "text", label: "Wachtwoord", name: "wachtwoord", required: true, type: "password" },
-                { view: "combo", label: "Vestigingen", name: "vestigingen", required: true, 
-                    options: [
-                        { id: "v1", value: "Vestiging 1" },
-                        { id: "v2", value: "Vestiging 2" },
-                        { id: "v3", value: "Vestiging 3" },
-                        { id: "v4", value: "Vestiging 4" }
-                ] },
-                { view: "combo", label: "Klant", name: "klant", 
-                    options: [
-                        { id: "k1", value: "Klant 1" },
-                        { id: "k2", value: "Klant 2" },
-                        { id: "k3", value: "Klant 3" }
-                ] },
-                { view: "combo", label: "Type", name: "type", 
-                    options: [
-                        { id: "super", value: "super" },
-                        { id: "admin", value: "admin" },
-                        { id: "editor", value: "editor" },
-                        { id: "gast", value: "gast" }
-                ] },
-                { view: "combo", label: "Status", name: "status", 
-                    options: [
-                        { id: "act", value: "act" },
-                        { id: "non", value: "non" }
-                ] }
-            ]
+                {view:"text", label:"Groep", id:"groep", name:"groep", required:true},
+                {view:"text", label:"Loginnaam", id:"loginnaam", name:"loginnaam", required:true},
+                {view:"checkbox", label:"Nieuw wachtwoord", id:"nieuwwachtwoord", name:"nieuwwachtwoord", labelWidth:150, relatedView:"wachtwoord", relatedAction:"show"},
+                {view:"text", label:"Wachtwoord", id:"wachtwoord", name:"wachtwoord", required:true, type:"password", hidden:true},
+                {view:"combo", label:"Vestiging", id:"vestiging", name:"vestiging", required:true, options:vestigingen_list},
+                {view:"combo", label:"Klant", id:"klant", name:"klant", options:klanten_list},
+                {view:"combo", label:"Type", id:"type", name:"type", options:type_list, value:"admin"},
+                {view:"combo", label:"Status", id:"status", name:"status", options:status_list, value:"act"},
+                {view:"button", label:"Opslaan", click:"getFormValues"},
+                {view:"button", label:"Nieuwe gebruiker", click:"resetFormulier"}
+            ],
+            elementsConfig: {
+                labelWidth:110
+            }
         });
     </script>
 </body>
