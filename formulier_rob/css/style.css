@@ -1,0 +1,40 @@
+/* Form style */
+.webix_view.webix_form {
+    background: #eee;
+}
+
+/* Required * style */
+label.webix_required:after {
+    color: inherit;
+}
+
+/* Select button style */
+.webix_el_combo span.webix_input_icon {
+    background: #aaa;
+}
+
+/* Normal button style */
+.webix_el_button button {
+    background: #fff;
+    border: 1px solid #666;
+    color: #666;
+}
+.webix_el_button button:hover {
+    background: #fff;
+    border: 1px solid #666;
+    color: #222;
+    font-weight: bold;
+}
+
+/* Form button style */
+.webix_el_box .webixtype_form {
+    background: #fff;
+    color: red;
+    border: 1px solid red;
+}
+.webix_el_box .webixtype_form:hover {
+    background: #fff;
+    color: red;
+    border: 1px solid red;
+    font-weight: bold;
+}

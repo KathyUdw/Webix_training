@@ -18,24 +18,31 @@
 <body>
     <script type="text/javascript">
         webix.ui({
-            view:"form",
-            id:"gebruikersformulier",
-            width:460,
-            elements: [
-                {view:"text", label:"Groep", id:"groep", name:"groep", required:true, invalidMessage:"Groep mag niet leeg zijn"},
-                {view:"text", label:"Loginnaam", id:"loginnaam", name:"loginnaam", required:true, invalidMessage:"Kies een loginnaam"},
-                {view:"checkbox", label:"Nieuw wachtwoord", id:"nieuwwachtwoord", name:"nieuwwachtwoord", labelWidth:150, relatedView:"wachtwoord", relatedAction:"show"},
-                {view:"text", label:"Wachtwoord", id:"wachtwoord", name:"wachtwoord", required:true, invalidMessage:"Geen geldig wachtwoord", type:"password", hidden:true},
-                {view:"combo", label:"Vestiging", id:"vestiging", name:"vestiging", required:true, invalidMessage:"Kies eerst een vestiging", options:vestigingen_list},
-                {view:"combo", label:"Klant", id:"klant", name:"klant", options:klanten_list},
-                {view:"combo", label:"Type", id:"type", name:"type", options:type_list, value:"admin"},
-                {view:"combo", label:"Status", id:"status", name:"status", options:status_list, value:"act"},
-                {view:"button", label:"Opslaan", click:"getFormValues"},
-                {view:"button", label:"Nieuwe gebruiker", click:"resetFormulier"}
-            ],
-            elementsConfig: {
-                labelWidth:110
-            }
+            type: "clean",
+            cols: [
+                {},
+                {
+                    view:"form",
+                    id:"gebruikersformulier",
+                    width:460,
+                    elements: [
+                        {view:"text", label:"Groep", id:"groep", name:"groep", required:true, invalidMessage:"Groep mag niet leeg zijn"},
+                        {view:"text", label:"Loginnaam", id:"loginnaam", name:"loginnaam", required:true, invalidMessage:"Kies een loginnaam"},
+                        {view:"checkbox", label:"Nieuw wachtwoord", id:"nieuwwachtwoord", name:"nieuwwachtwoord", labelWidth:150, relatedView:"wachtwoord", relatedAction:"show"},
+                        {view:"text", label:"Wachtwoord", id:"wachtwoord", name:"wachtwoord", required:true, invalidMessage:"Geen geldig wachtwoord", type:"password", hidden:true},
+                        {view:"combo", label:"Vestiging", id:"vestiging", name:"vestiging", required:true, invalidMessage:"Kies eerst een vestiging", options:vestigingen_list},
+                        {view:"combo", label:"Klant", id:"klant", name:"klant", options:klanten_list},
+                        {view:"combo", label:"Type", id:"type", name:"type", options:type_list, value:"admin"},
+                        {view:"combo", label:"Status", id:"status", name:"status", options:status_list, value:"act"},
+                        {view:"button", label:"Opslaan", click:"getFormValues", type: "form"},
+                        {view:"button", label:"Nieuwe gebruiker", click:"resetFormulier"}
+                    ],
+                    elementsConfig: {
+                        labelWidth:110
+                    }   
+                },
+                {}
+            ]
         });
     </script>
 </body>
